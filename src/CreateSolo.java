@@ -17,9 +17,9 @@ public class CreateSolo {
 	 * @param scale The music scale used for the solo.
 	 * @param length The number of notes the solo whould contain.
 	 */
-	public CreateSolo(int key, String scale, int length){
+	public CreateSolo(int key, Scale scale, int length){
 		int[] Solo = new int[length];
-		int[] thisScale = new Scales().getScale(scale);
+		int[] thisScale = scale.getScaleNotes();
 		int numNotes = thisScale.length;
 		int randomNote;
 		for (int i = 0; i < length; i++) {
@@ -81,7 +81,7 @@ public class CreateSolo {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		new CreateSolo(5, "PentMaj", 40);
+		new CreateSolo(5, Scale.PENT_MAJ, 40);
 	}
 
 }
